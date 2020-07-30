@@ -57,3 +57,5 @@ group :test do
   gem 'database_cleaner'
 end
 gem "rollbar"
+gem "kaminari"
+gem "bootstrap4-kaminari-views"
