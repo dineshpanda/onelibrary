@@ -8,5 +8,4 @@ class Book < ApplicationRecord
   # Validations
 
   # Scopes
-
 end

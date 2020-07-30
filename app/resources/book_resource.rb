@@ -10,5 +10,4 @@ class BookResource < ApplicationResource
   belongs_to :student
 
   # Indirect associations
-
 end
