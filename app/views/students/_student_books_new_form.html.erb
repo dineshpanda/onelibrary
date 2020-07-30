@@ -1,21 +1,11 @@
-<!-- Form book start -->
 <%= form_with(model: @book, local: true) do |f| %>
-<!-- Form book end -->
 
-  <!-- Label and input for title start -->
   <div class="form-group">
     <%= f.label :title %>
-    <!-- Input for title start -->
     <%= f.text_field :title, class: "form-control" %>
-    <!-- Input for title end -->
   </div>
-  <!-- Label and input for title end -->
 
-  <!-- Label and input for student_id start -->
-  <!-- Input for student_id start -->
   <%= f.hidden_field :student_id, value: @student.id %>
-  <!-- Input for student_id end -->
-  <!-- Label and input for student_id end -->
 
   <%= f.submit "Create book", class: "btn btn-block btn-outline-secondary" %>
 <% end %>

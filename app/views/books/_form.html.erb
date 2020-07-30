@@ -1,7 +1,6 @@
 <% was_validated = book.errors.any? %>
 
 <%= form_with(model: book, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for title start -->
   <div class="form-group">
     <% title_class = "form-control" %>
     <% title_was_invalid = book.errors.include?(:title) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :title %>
-    <!-- Input for title start -->
     <%= f.text_field :title, class: title_class, placeholder: "Enter title" %>
-    <!-- Input for title end -->
     <% if title_was_invalid %>
       <% book.errors.full_messages_for(:title).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for title end -->
-  <!-- Label and input for student_id start -->
   <div class="form-group">
     <% student_id_class = "form-control" %>
     <% student_id_was_invalid = book.errors.include?(:student_id) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :student_id %>
-    <!-- Input for student_id start -->
     <%= f.select :student_id, options_from_collection_for_select(Student.all, :id, :name, @book.student_id), {}, class: "form-control" %>
-    <!-- Input for student_id end -->
     <% if student_id_was_invalid %>
       <% book.errors.full_messages_for(:student_id).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,6 +45,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for student_id end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>
