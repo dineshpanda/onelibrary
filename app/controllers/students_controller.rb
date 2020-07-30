@@ -3,7 +3,8 @@ class StudentsController < ApplicationController
 
   # GET /students
   def index
-    @students = Student.page(params[:page]).per(10)
+    @q = Student.ransack(params[:q])
+    @students = @q.result(:distinct => true).includes(:books).page(params[:page]).per(10)
   end
 
   # GET /students/1
