@@ -8,6 +8,7 @@ class StudentsController < ApplicationController
 
   # GET /students/1
   def show
+    @book = Book.new
   end
 
   # GET /students/new
