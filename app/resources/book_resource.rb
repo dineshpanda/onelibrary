@@ -7,6 +7,8 @@ class BookResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :student
+
   # Indirect associations
 
 end
