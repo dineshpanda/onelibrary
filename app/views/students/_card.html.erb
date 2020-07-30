@@ -12,7 +12,9 @@
 
       <dt>Pic</dt>
       <!-- Display pic start -->
-      <dd><%= student.pic %></dd>
+      <dd>
+        <%= cl_image_tag @student.pic, class: "img-fluid" %>
+      </dd>
       <!-- Display pic end -->
 
     </dl>
