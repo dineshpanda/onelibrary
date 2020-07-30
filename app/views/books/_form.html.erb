@@ -42,7 +42,7 @@
 
     <%= f.label :student_id %>
     <!-- Input for student_id start -->
-    <%= f.number_field :student_id, class: student_id_class, placeholder: "Enter student" %>
+    <%= f.select :student_id, options_from_collection_for_select(Student.all, :id, :name, @book.student_id), {}, class: "form-control" %>
     <!-- Input for student_id end -->
     <% if student_id_was_invalid %>
       <% book.errors.full_messages_for(:student_id).each do |message| %>
